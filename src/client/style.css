@@ -1,0 +1,29 @@
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+.gray {
+  color: rgba(0, 0, 0, 0.54);
+}
+
+.index-link {
+  text-decoration: none;
+  color: #333;
+}
+
+.profiles-list > md-card {
+  margin-bottom: 15px;
+}
+
+.profiles-list > md-card:last-child {
+  margin-bottom: 0;
+}
+
+.friend-with:not(:last-child):after {
+  content: ',';
+}

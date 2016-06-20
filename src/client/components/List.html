@@ -1,0 +1,19 @@
+<div *ngIf="data.profiles" class="profiles-list">
+  <md-card *ngFor="let profile of data.profiles">
+    <md-card-header>
+      <img md-card-avatar [src]="profile.avatar">
+
+      <md-card-title>
+        {{ profile.fullName }}
+      </md-card-title>
+
+      <md-card-subtitle>
+        {{ profile.title }}
+      </md-card-subtitle>
+    </md-card-header>
+
+    <md-card-content>
+      <friends-snippet [friends]="profile.friends"></friends-snippet>
+    </md-card-content>
+  </md-card>
+</div>
