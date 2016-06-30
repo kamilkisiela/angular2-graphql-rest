@@ -12,7 +12,7 @@ import {
 
 import {
   Friends
-} from './Friends';
+} from './Friends.rest';
 
 @Component({
   selector: 'list',
