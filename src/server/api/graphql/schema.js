@@ -17,4 +17,10 @@ export const schema = [`
 `];
 
 // Define resolvers
-export const resolvers = {};
+export const resolvers = {
+  Query: {
+    profiles(_, { ids }, context) {
+      return context.Profiles.all(ids);
+    },
+  }
+};
