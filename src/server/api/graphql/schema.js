@@ -9,6 +9,7 @@ export const schema = [`
 
   type Query {
     profiles (ids: [Int]): [Profile]
+    profile (id: Int!): Profile
   }
 
   schema {
@@ -21,6 +22,9 @@ export const resolvers = {
   Query: {
     profiles(_, { ids }, context) {
       return context.Profiles.all(ids);
+    },
+    profile(_, { id }, context) {
+      return context.Profiles.single(id);
     },
   }
 };
