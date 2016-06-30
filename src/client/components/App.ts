@@ -3,10 +3,6 @@ import {
 } from '@angular/core';
 
 import {
-  Http
-} from '@angular/http';
-
-import {
   MD_TOOLBAR_DIRECTIVES
 } from '@angular2-material/toolbar';
 
@@ -15,32 +11,22 @@ import {
 } from '@angular2-material/button';
 
 import {
-  ROUTER_DIRECTIVES
-} from '@angular/router';
+  List
+} from './List';
 
 @Component({
   selector: 'app',
   directives: [
     MD_TOOLBAR_DIRECTIVES,
     MD_BUTTON_DIRECTIVES,
-    ROUTER_DIRECTIVES
+    List
   ],
   template: `
     <md-toolbar>
-      <a class="index-link" [routerLink]="['/']">Profiles</a>
+      <a class="index-link" href="#">Profiles</a>
 
       <span style="flex: 1 1 auto;"></span>
 
-      <a
-        md-button
-        [routerLink]="['/use-graphql']">
-        GraphQL
-      </a>
-      <a
-        md-button
-        [routerLink]="['/use-rest']">
-        REST
-      </a>
       <a
         md-button
         color="accent"
@@ -49,7 +35,7 @@ import {
       </a>
     </md-toolbar>
 
-    <router-outlet></router-outlet>
+    <list></list>
   `
 })
 export class App {}
