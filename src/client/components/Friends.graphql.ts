@@ -32,6 +32,26 @@ import {
     DisplayFriendPipe
   ]
 })
+@Apollo({
+  client,
+  queries(context: Friends) {
+    return {
+      data: {
+        query: gql`
+          query getFriends($ids: [Int]!) {
+            profiles (ids: $ids) {
+              id
+              fullName
+            }
+          }
+        `,
+        variables: {
+          ids: context.friends.map((friend) => friend.id)
+        }
+      }
+    };
+  }
+})
 export class Friends {
   @Input() friends: any;
   data: any = {};
