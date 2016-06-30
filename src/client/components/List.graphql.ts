@@ -18,7 +18,7 @@ import {
 
 import {
   Friends
-} from './Friends';
+} from './Friends.graphql';
 
 @Component({
   selector: 'list',
