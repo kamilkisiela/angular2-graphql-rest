@@ -5,6 +5,7 @@ export const schema = [`
     fullName: String!
     title: String!
     avatar: String!
+    friends: [Profile]!
   }
 
   type Query {
@@ -26,5 +27,10 @@ export const resolvers = {
     profile(_, { id }, context) {
       return context.Profiles.single(id);
     },
+  },
+  Profile: {
+    friends({ id }, args, context) {
+      return context.Profiles.friends(id);
+    }
   }
 };
