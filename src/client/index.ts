@@ -16,6 +16,11 @@ import {
   App
 } from './components/App';
 
+import {
+  APP_ROUTER_PROVIDERS
+} from './router';
+
 bootstrap(App, [
+  APP_ROUTER_PROVIDERS,
   HTTP_PROVIDERS
 ]);
