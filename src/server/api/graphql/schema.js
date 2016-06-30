@@ -6,6 +6,14 @@ export const schema = [`
     title: String!
     avatar: String!
   }
+
+  type Query {
+    profiles (ids: [Int]): [Profile]
+  }
+
+  schema {
+    query: Query
+  }
 `];
 
 // Define resolvers
