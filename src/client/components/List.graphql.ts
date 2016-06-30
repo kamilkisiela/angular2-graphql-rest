@@ -51,5 +51,5 @@ import {
   }
 })
 export class List {
-  data = any;
+  data: any;
 }
