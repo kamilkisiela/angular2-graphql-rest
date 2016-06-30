@@ -7,8 +7,14 @@ import {
 } from '@angular2-material/card'
 
 import {
-  ProfilesService
-} from '../providers/ProfilesService';
+  Apollo
+} from 'angular2-apollo';
+
+import gql from 'graphql-tag';
+
+import {
+  client
+} from '../client';
 
 import {
   Friends
@@ -20,23 +26,10 @@ import {
   directives: [
     MD_CARD_DIRECTIVES,
     Friends
-  ],
-  providers: [
-    ProfilesService
   ]
 })
 export class List {
   data = {
     profiles: []
   };
-
-  constructor(private profilesService: ProfilesService) {}
-
-  ngOnInit() {
-    this.profilesService
-      .all()
-      .then((profiles) => {
-        this.data.profiles = profiles;
-      });
-  }
 }
