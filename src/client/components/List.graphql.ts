@@ -28,8 +28,28 @@ import {
     Friends
   ]
 })
+@Apollo({
+  client,
+  queries(context: List) {
+    return {
+      data: {
+        query: gql`
+          query getProfiles {
+            profiles {
+              id
+              fullName
+              title
+              avatar
+              friends {
+                id
+              }
+            }
+          }
+        `
+      }
+    };
+  }
+})
 export class List {
-  data = {
-    profiles: []
-  };
+  data = any;
 }
