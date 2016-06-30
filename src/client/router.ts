@@ -4,14 +4,31 @@ import {
 } from '@angular/router';
 
 import {
+  Intro
+} from './components/Intro';
+
+import {
   List as ListREST
 } from './components/List.rest';
 
+import {
+  List as ListGraphQL
+} from './components/List.graphql';
+
 export const routes: RouterConfig = [
-  // REST
   {
     path: '',
+    component: Intro
+  },
+  // REST
+  {
+    path: 'use-rest',
     component: ListREST
+  },
+  // REST
+  {
+    path: 'use-graphql',
+    component: ListGraphQL
   },
 ];
 
