@@ -29,8 +29,7 @@ var clientConfig = {
   ],
   devServer: {
     proxy: {
-      '/graphql': 'http://localhost:3010/graphql',
-      '/api/*': 'http://localhost:3010'
+      '/graphql': 'http://localhost:3010/graphql'
     },
     historyApiFallback: {
       index: '/',
