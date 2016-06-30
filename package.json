@@ -1,0 +1,66 @@
+{
+  "name": "angular2-graphql-rest",
+  "version": "0.0.1",
+  "description": "Angular2 App with REST Api and GraphQL with Apollo backends",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "watch": "webpack --watch",
+    "prebuild": "rimraf build",
+    "build": "webpack",
+    "build:prod": "webpack --progress -p",
+    "prestart": "npm run build",
+    "seed": "knex seed:run",
+    "migrate": "knex migrate:latest",
+    "start:clean": "npm run migrate && npm run seed && npm run start",
+    "start:server": "nodemon build/server/index.js --watch build/server",
+    "start:client": "webpack-dev-server -d --hot --inline --no-info --port 3000",
+    "start": "concurrently \"npm run start:server\" \"npm run start:client\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/kamilkisiela/angular2-graphql-rest.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kamilkisiela/angular2-graphql-rest/issues"
+  },
+  "homepage": "https://github.com/kamilkisiela/angular2-graphql-rest#readme",
+  "dependencies": {
+    "@angular/common": "2.0.0-rc.4",
+    "@angular/compiler": "2.0.0-rc.4",
+    "@angular/core": "2.0.0-rc.4",
+    "@angular/http": "^2.0.0-rc.4",
+    "@angular/platform-browser": "2.0.0-rc.4",
+    "@angular/platform-browser-dynamic": "2.0.0-rc.4",
+    "@angular2-material/card": "2.0.0-alpha.6",
+    "@angular2-material/core": "2.0.0-alpha.6",
+    "@angular2-material/toolbar": "2.0.0-alpha.6",
+    "es6-shim": "^0.35.1",
+    "reflect-metadata": "^0.1.3",
+    "rxjs": "^5.0.0-beta.6",
+    "zone.js": "^0.6.12"
+  },
+  "devDependencies": {
+    "babel-loader": "^6.2.4",
+    "babel-preset-es2015": "^6.9.0",
+    "body-parser": "^1.15.2",
+    "casual": "^1.5.3",
+    "concurrently": "^2.1.0",
+    "css-loader": "^0.23.1",
+    "express": "^4.14.0",
+    "html-webpack-plugin": "^2.21.0",
+    "knex": "^0.11.7",
+    "nodemon": "^1.9.2",
+    "path": "^0.12.7",
+    "raw-loader": "^0.5.1",
+    "rimraf": "^2.5.2",
+    "sqlite3": "^3.1.4",
+    "style-loader": "^0.13.1",
+    "ts-loader": "^0.8.2",
+    "typescript": "^1.8.10",
+    "webpack": "^1.13.1",
+    "webpack-dev-server": "^1.14.1",
+    "webpack-merge": "^0.14.0"
+  }
+}
