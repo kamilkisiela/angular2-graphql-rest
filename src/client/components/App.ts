@@ -11,20 +11,21 @@ import {
 } from '@angular2-material/toolbar';
 
 import {
-  List
-} from './List';
+  ROUTER_DIRECTIVES
+} from '@angular/router';
 
 @Component({
   selector: 'app',
   directives: [
     MD_TOOLBAR_DIRECTIVES,
-    List
+    ROUTER_DIRECTIVES
   ],
   template: `
     <md-toolbar>
       <a class="index-link" href="#">Profiles</a>
     </md-toolbar>
-    <list></list>
+
+    <router-outlet></router-outlet>
   `
 })
 export class App {}
