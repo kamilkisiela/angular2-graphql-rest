@@ -12,13 +12,13 @@ import {
 } from '../pipes/DisplayFriendPipe';
 
 @Component({
-  selector: 'friends-snippet',
+  selector: 'friends',
   template: `
     <span class="gray">
       Friend with:
     </span>
 
-    <span *ngIf="friends" *ngFor="let friendId of friends" class="friend-with">
+    <span *ngFor="let friendId of friends" class="friend-with">
       {{ getFriend(friendId) | displayFriend }}
     </span>
   `,
@@ -26,7 +26,7 @@ import {
     DisplayFriendPipe
   ]
 })
-export class FriendsSnippet {
+export class Friends {
   @Input() friends: number[];
   data: any = {};
 

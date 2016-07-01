@@ -17,15 +17,15 @@ import {
 } from '../client';
 
 import {
-  FriendsSnippet
-} from './FriendsSnippet.graphql';
+  Friends
+} from './Friends.graphql';
 
 @Component({
   selector: 'list',
   template: require('raw!./List.html'),
   directives: [
     MD_CARD_DIRECTIVES,
-    FriendsSnippet
+    Friends
   ]
 })
 @Apollo({

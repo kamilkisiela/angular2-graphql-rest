@@ -11,15 +11,15 @@ import {
 } from '../providers/ProfilesService';
 
 import {
-  FriendsSnippet
-} from './FriendsSnippet.rest';
+  Friends
+} from './Friends.rest';
 
 @Component({
   selector: 'list',
   template: require('raw!./List.html'),
   directives: [
     MD_CARD_DIRECTIVES,
-    FriendsSnippet
+    Friends
   ],
   providers: [
     ProfilesService

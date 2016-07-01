@@ -14,7 +14,7 @@ import {
 } from '../client';
 
 @Component({
-  selector: 'friends-snippet',
+  selector: 'friends',
   template: `
     <span class="gray">
       Friend with:
@@ -27,7 +27,7 @@ import {
 })
 @Apollo({
   client,
-  queries(context: FriendsSnippet) {
+  queries(context: Friends) {
     return {
       data: {
         query: gql`
@@ -45,7 +45,7 @@ import {
     };
   }
 })
-export class FriendsSnippet {
+export class Friends {
   @Input() friends: any[];
   data: any = {};
 }
