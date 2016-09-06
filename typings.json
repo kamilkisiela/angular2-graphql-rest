@@ -1,6 +1,7 @@
 {
   "globalDependencies": {
     "es6-shim": "registry:dt/es6-shim#0.31.2+20160602141504",
+    "hammerjs": "registry:dt/hammerjs#2.0.8+20160724063812",
     "isomorphic-fetch": "registry:dt/isomorphic-fetch#0.0.0+20160524142046",
     "node": "registry:dt/node#6.0.0+20160621231320"
   },

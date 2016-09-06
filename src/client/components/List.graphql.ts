@@ -1,36 +1,17 @@
-import {
-  Component
-} from '@angular/core';
-
-import {
-  MD_CARD_DIRECTIVES
-} from '@angular2-material/card'
-
-import {
-  Apollo
-} from 'angular2-apollo';
+import { Component } from '@angular/core';
+import { Apollo } from 'angular2-apollo';
 
 import gql from 'graphql-tag';
 
-import {
-  client
-} from '../client';
-
-import {
-  Friends
-} from './Friends.graphql';
+import { client } from '../client';
 
 @Component({
-  selector: 'list',
-  template: require('raw!./List.html'),
-  directives: [
-    MD_CARD_DIRECTIVES,
-    Friends
-  ]
+  selector: 'list-graphql',
+  template: require('raw!./List.graphql.html'),
 })
 @Apollo({
   client,
-  queries(context: List) {
+  queries(context: ListGraphql) {
     return {
       data: {
         query: gql`
@@ -50,4 +31,4 @@ import {
     };
   }
 })
-export class List {}
+export class ListGraphql {}

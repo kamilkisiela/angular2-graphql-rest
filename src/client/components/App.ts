@@ -1,44 +1,22 @@
-import {
-  Component
-} from '@angular/core';
-
-import {
-  Http
-} from '@angular/http';
-
-import {
-  MD_TOOLBAR_DIRECTIVES
-} from '@angular2-material/toolbar';
-
-import {
-  MD_BUTTON_DIRECTIVES
-} from '@angular2-material/button';
-
-import {
-  ROUTER_DIRECTIVES
-} from '@angular/router';
+import { Component } from '@angular/core';
+import { Http } from '@angular/http';
 
 @Component({
   selector: 'app',
-  directives: [
-    MD_TOOLBAR_DIRECTIVES,
-    MD_BUTTON_DIRECTIVES,
-    ROUTER_DIRECTIVES
-  ],
   template: `
     <md-toolbar>
-      <a class="index-link" [routerLink]="['/']">Profiles</a>
+      <a class="index-link" routerLink="/">Profiles</a>
 
       <span style="flex: 1 1 auto;"></span>
 
       <a
         md-button
-        [routerLink]="['/use-graphql']">
+        routerLink="/use-graphql">
         GraphQL
       </a>
       <a
         md-button
-        [routerLink]="['/use-rest']">
+        routerLink="/use-rest">
         REST
       </a>
 

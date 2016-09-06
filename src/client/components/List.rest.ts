@@ -1,31 +1,12 @@
-import {
-  Component
-} from '@angular/core';
+import { Component } from '@angular/core';
 
-import {
-  MD_CARD_DIRECTIVES
-} from '@angular2-material/card'
-
-import {
-  ProfilesService
-} from '../providers/ProfilesService';
-
-import {
-  Friends
-} from './Friends.rest';
+import { ProfilesService } from '../providers/ProfilesService';
 
 @Component({
-  selector: 'list',
-  template: require('raw!./List.html'),
-  directives: [
-    MD_CARD_DIRECTIVES,
-    Friends
-  ],
-  providers: [
-    ProfilesService
-  ]
+  selector: 'list-rest',
+  template: require('raw!./List.rest.html'),
 })
-export class List {
+export class ListRest {
   data = {
     profiles: []
   };

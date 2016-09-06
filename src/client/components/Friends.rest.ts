@@ -1,18 +1,9 @@
-import {
-  Component,
-  Input
-} from '@angular/core';
+import { Component, Input } from '@angular/core';
 
-import {
-  ProfilesService
-} from '../providers/ProfilesService';
-
-import {
-  DisplayFriendPipe
-} from '../pipes/DisplayFriendPipe';
+import { ProfilesService } from '../providers/ProfilesService';
 
 @Component({
-  selector: 'friends',
+  selector: 'friends-rest',
   template: `
     <span class="gray">
       Friend with:
@@ -22,11 +13,8 @@ import {
       {{ getFriend(friendId) | displayFriend }}
     </span>
   `,
-  pipes: [
-    DisplayFriendPipe
-  ]
 })
-export class Friends {
+export class FriendsRest {
   @Input() friends: number[];
   data: any = {};
 

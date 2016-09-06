@@ -1,28 +1,13 @@
-import {
-  provideRouter,
-  RouterConfig
-} from '@angular/router';
+import { Routes } from '@angular/router';
 
-import {
-  Intro
-} from './components/Intro';
+import { Intro } from './components/Intro';
+import { ListGraphql } from './components/List.graphql';
+import { ListRest } from './components/List.rest';
 
-import {
-  List as ListGraphQL
-} from './components/List.graphql';
-
-import {
-  List as ListREST
-} from './components/List.rest';
-
-export const routes: RouterConfig = [
+export const routes: Routes = [
   { path: '',                         component: Intro },
   // GraphQL
-  { path: 'use-graphql',              component: ListGraphQL },
+  { path: 'use-graphql',              component: ListGraphql },
   // REST
-  { path: 'use-rest',                 component: ListREST },
-];
-
-export const APP_ROUTER_PROVIDERS = [
-  provideRouter(routes)
+  { path: 'use-rest',                 component: ListRest },
 ];

@@ -1,20 +1,12 @@
-import {
-  Component,
-  Input
-} from '@angular/core';
-
-import {
-  Apollo
-} from 'angular2-apollo';
+import { Component, Input } from '@angular/core';
+import { Apollo } from 'angular2-apollo';
 
 import gql from 'graphql-tag';
 
-import {
-  client
-} from '../client';
+import { client } from '../client';
 
 @Component({
-  selector: 'friends',
+  selector: 'friends-graphql',
   template: `
     <span class="gray">
       Friend with:
@@ -27,7 +19,7 @@ import {
 })
 @Apollo({
   client,
-  queries(context: Friends) {
+  queries(context: FriendsGraphql) {
     return {
       data: {
         query: gql`
@@ -45,7 +37,7 @@ import {
     };
   }
 })
-export class Friends {
+export class FriendsGraphql {
   @Input() friends: any[];
   data: any = {};
 }
